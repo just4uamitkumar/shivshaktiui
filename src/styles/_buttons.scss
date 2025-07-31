@@ -1,0 +1,122 @@
+@import "variables";
+@import "colors";
+@import "mixins";
+
+/*-------| Button Classes |--------*/
+button.MuiButtonBase-root {
+  font-size: 1rem;
+  font-family: $SodoSans;
+  text-transform: none;
+  transition: all 0.6s ease-in-out;
+
+  &.primary-btn {
+    background-color: $primary;
+    color: $white;
+    padding: $grid-1x $grid-3x;
+
+    &:hover {
+      background-color: $orange300;
+    }
+
+    &.MuiButton-text {
+      background-color: transparent;
+      color: $territory-text;
+      padding: $grid-1x $grid-2x;
+    }
+
+    &.MuiButton-outlined {
+      background-color: $white;
+      border: 1px solid $primary;
+      color: $orange;
+      padding: $grid-1x $grid-3x;
+
+      &:hover {
+        background-color: $primary;
+        color: $white;
+      }
+    }
+  }
+
+  &.secondary-btn {
+    background-color: $white;
+    border: 1px solid $primary;
+    color: $orange;
+    padding: $grid-1x $grid-3x;
+    transition: all 0.6s ease-in-out;
+
+    &:hover {
+      background-color: $orange;
+      color: $white;
+    }
+  }
+  &.cancel-btn {
+    background-color: $white;
+    border: 1px solid $territory-text;
+    color: $territory-text;
+    padding: $grid-1x $grid-3x;
+    transition: all 0.6s ease-in-out;
+
+    &:hover {
+      background-color: $blue700;
+    }
+  }
+}
+
+
+/*-------| Icons Button Classes |--------*/
+button.MuiIconButton-root {
+  font-size: 1rem;
+  transition: all 0.6s ease-in-out;
+
+  &.primary-btn {
+    background-color: $primary;
+    color: $white;
+    padding: $grid-1x;
+
+    &:hover {
+      background-color: $orange300;
+    }
+
+    &.MuiButton-text {
+      background-color: transparent;
+      color: $territory-text;
+      padding: $grid-1x;
+    }
+
+    &.MuiButton-outlined {
+      background-color: $white;
+      border: 1px solid $primary;
+      color: $orange;
+      padding: $grid-1x;
+
+      &:hover {
+        background-color: $primary;
+        color: $white;
+      }
+    }
+  }
+
+  &.secondary-btn {
+    background-color: $white;
+    border: 1px solid $primary;
+    color: $orange;
+    padding: $grid-1x;
+    transition: all 0.6s ease-in-out;
+
+    &:hover {
+      background-color: $orange;
+      color: $white;
+    }
+  }
+  &.cancel-btn {
+    background-color: $white;
+    border: 1px solid $territory-text;
+    color: $territory-text;
+    padding: $grid-1x;
+    transition: all 0.6s ease-in-out;
+
+    &:hover {
+      background-color: $blue700;
+    }
+  }
+}

@@ -1,0 +1,179 @@
+@import "fonts";
+@import "reset";
+@import "inheritance";
+
+//10536 and down
+@media only screen and (max-width: $breakpoint-large-desktop) {
+  html {
+    font-size: 17px;
+  }
+}
+
+//1366 and down
+@media only screen and (max-width: $breakpoint-normal-desktop2) {
+  html {
+    font-size: 16px;
+  }
+}
+
+//1200 and down
+@media only screen and (max-width: $breakpoint-normal-desktop) {
+  html {
+    font-size: 15px;
+  }
+
+  .container {
+    width: 96%;
+  }
+}
+
+//1024 and down
+@media only screen and (max-width: $breakpoint-sm-desktop) {
+  html {
+    font-size: 14px;
+  }
+
+  /*-------| Nav |--------*/
+  nav {
+    ul {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+
+      li {
+        border-bottom: 1px solid $primary-text;
+        padding: $grid-1x 0;
+        margin: 0 $grid-1x;
+        a {
+          color: $black300;
+          text-decoration: none;
+          font-family: $SodoSansSemiBold;
+          padding: $grid-1x $grid-2x;
+          &:hover {
+            color: $black;
+          }
+        }
+      }
+    }
+  }
+
+  /*-------| DropDown menu |--------*/
+  .dropdown-menu {
+    .MuiMenu-paper {
+      ul {
+        li {
+          min-height: $grid-4x;
+        }
+      }
+    }
+  }
+
+  /*-------| Banner |--------*/
+  .banner {
+    h1.MuiTypography-root {
+      font-size: 3rem;
+    }
+    h2.MuiTypography-root {
+      font-size: 1.5rem;
+    }
+    .circle {
+      width: $grid-2x * 5;
+      height: $grid-2x * 5;
+    }
+
+    .dateCircle {
+      border: double 3px $white300;
+    }
+
+    .timeCircle {
+      border: double 3px $white300;
+    }
+  }
+
+  /*-------| Section1 |--------*/
+  .section1 {
+    .container {
+      padding: $grid-3x;
+    }
+
+    h1 {
+      margin-top: $grid-2x;
+      font-size: 2.5rem;
+    }
+
+    .duration {
+      padding: $grid-1x 0;
+    }
+  }
+} /*-- End 1024 css--*/
+
+//768 and down
+@media only screen and (max-width: $breakpoint-tablet) {
+  /*-------| Banner |--------*/
+  .banner {
+    h1.MuiTypography-root {
+      font-size: 1.8rem;
+    }
+    h2.MuiTypography-root {
+      font-size: 1.1rem;
+    }
+    .circle {
+      width: $grid-2x * 3;
+      height: $grid-2x * 3;
+    }
+  }
+
+  /*-------| Section1 |--------*/
+  .section1 {
+    .container {
+      padding: $grid-2x;
+    }
+
+    h1 {
+      margin-top: $grid-1x;
+      font-size: 2.1rem;
+    }
+  }
+
+  /*-------| Section2 |--------*/
+  .section2 {
+    .widget {
+      .imgWrap {
+        img {
+          width: 30%;;
+          margin: $grid-1x auto;
+        }
+      }
+    }
+  }
+
+  /*-------| Section3 |--------*/
+.section3 {
+  .widget {
+    .widget-text {
+      &.left {
+        margin-right: 0;
+      }
+      &.right {
+        margin-left:0;
+      }
+    }
+  }
+}
+
+ 
+} /*-- End 768 css--*/
+
+//480 and down
+@media only screen and (max-width: $breakpoint-mobile) {
+  /*-------| Banner |--------*/
+  .banner {
+    h2.MuiTypography-root {
+      font-size: 1rem;
+    }
+    .circle {
+      width: $grid-2x * 2.5;
+      height: $grid-2x * 2.5;
+    }
+  }
+} /*-- End 480  css--*/

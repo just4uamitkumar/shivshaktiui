@@ -1,0 +1,124 @@
+/*----| Red |----*/
+$red: #b71c1c;
+$red100: #9a2a21;
+$red200: #d53f28;
+$red300: #e53935;
+$red400: #f44336;
+$red500: #ef5350;
+$red600: #fabdab; //rgb(250, 189, 171)
+$red700: #fcd7cd; //rgb(252, 215, 205)
+$red800: #ef9a9a;
+$red900: #e57373;
+
+/*----| Green |----*/
+$green: #1e3832;
+$green100: #004f35;
+$green200: #006241;
+$green300: #00754a;
+$green400: #008d5b;
+$green500: #08a36a;
+$green600: #0cc783;
+$green650: #95cc76;
+$green700: #bfe0ad;
+$green750: #d4e9e2;
+$green800: #d2ebe0;
+$green900: #e8f4ee;
+
+/*----| Blue |----*/
+$blue: #064163;
+$blue100: #005a8a;
+$blue200: #1565c0; //territory-text
+$blue300: #1976d2; 
+$blue400: #1dc6df; 
+$blue500: #2196f3; //territory-text-hover
+$blue600: #42a5f5;
+$blue700: #64b5f6;
+$blue800: #90caf9;
+$blue900: #bbdefb;
+
+/*----| Violet |----*/
+$violet: #29044a;
+
+/*----| Yellow |----*/
+$yellow: #efc60d;
+$yellow100: #e9c41f;
+$yellow300: #f7d87d;
+$yellow400: #fae8b1;
+
+/*----| Orange |----*/
+$orange: #F26938;  // $secondary-text
+$orange300: #eb8500; //secondary-text-hover, $primary-hover
+
+/*----| Black |----*/
+$black: #000; //$secondary
+$black100: #0d0c0c;
+$black200: #161616;
+$black300: #1e1e1e;// $secondary-hover
+$black400: #6a6a6a;//$primary-text
+$black500: #6a6a6a; 
+$black600: #818181;//$primary-text-hover
+$black700: #cecece;
+
+/*----| White |----*/
+$white: #fff; //$territory
+$white100: #dadada; 
+$white200: #d9d9d9;
+$white300: #C2C2C2; //$territory-hover
+$white400: #f7f3ee; 
+$white500: #f9f9f9; 
+
+/*----| Grey |----*/
+$grey: #212121; 
+$grey100: #424242;
+$grey200: #4a4a4a;
+$grey300: #605f5f;
+$grey400: #9e9e9e;
+$grey500: #b4b4b4;
+$grey600: #e0e0e0;
+$grey700: #e4e3e3;
+$grey800: #f8f8f8;
+$grey900: #fafafa;
+
+/*----| Brown |----*/
+$brown: #645123; //$warning-text
+
+/*----| Primary |----*/
+$primary: $orange;
+$primary-hover: $orange300;
+$primary-text: $black600;
+$primary-text-hover: $black300;
+
+/*----| Secondary |----*/
+$secondary: $black;
+$secondary-hover: $black300;
+$secondary-text: $orange;
+$secondary-text-hover: $orange300;
+
+/* ---- | Territory |-----*/
+$territory: $white;
+$territory-hover: $white300;
+$territory-text: $blue200;
+$territory-text-hover: $blue400;
+
+/*----| Warning |----*/
+$warning: $yellow400;
+$warning-hover: $yellow100;
+$warning-text: $brown;
+$warning-text: $brown;
+$warnint-text-hover: $grey100;
+
+/*----| Error |----*/
+$error: $red700;
+$error-hover: $red500;
+$error-text: $red100;
+$error-text: $red500;
+
+/*----| Info |----*/
+$info-color: $blue400;
+$info-hover: $blue500;
+$info-text: $blue;
+$info-text-hover: $blue300;
+
+/*----| Tertieary |----*/
+$tertiary: $orange300;
+$tertiary-hover: $yellow300;

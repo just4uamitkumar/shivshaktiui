@@ -1,0 +1,14 @@
+/*----| Round Corder |----*/
+@mixin roundCorner($radius) {
+    -webkit-border-radius: $radius;
+    -moz-border-radius: $radius;
+    -ms-border-radius: $radius;
+    border-radius: $radius;
+  }
+  
+/*----| Shadow Container |----*/
+@mixin boxShadow($shadow...) {
+  -webkit-box-shadow: $shadow;
+  -moz-box-shadow: $shadow;
+  box-shadow: $shadow;
+}

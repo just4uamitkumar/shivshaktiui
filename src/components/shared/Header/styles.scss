@@ -1,0 +1,130 @@
+@import "../../../styles/variables";
+@import "../../../styles/colors";
+
+/*-------| Courtesy |--------*/
+.curtesy {
+  background: $secondary;
+  color: $territory-hover;
+  padding: $half-grid 0;
+  align-items: center;
+
+  .curtseyLinks {
+    ul {
+      list-style: none;
+
+      li {
+        display: inline-block;
+        padding-top: $half-grid;
+        position: relative;
+        &::before {
+          content: "-";
+          color: $secondary-text;
+        }
+
+        &:first-child {
+          &::before {
+            content: "";
+          }
+        }
+        a {
+          color: $territory-hover;
+          font-size: 0.8rem;
+          text-decoration: none;
+          padding: $grid-1x $grid-2x $half-grid;
+          &:hover {
+            color: $white100;
+          }
+        }
+      }
+    }
+  }
+}
+
+/*-------| Header |--------*/
+header {
+  background-color: $white;
+  .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: $grid-1x 0;
+  }
+  .logo {
+    a {
+      width: calc($default-grid * 18);
+      img {
+        width: 100%;
+      }
+    }
+  }
+
+  nav {
+    ul {
+      list-style: none;
+      display: flex;
+
+      li {
+        a {
+          color: $black300;
+          text-decoration: none;
+          font-family: $SodoSansSemiBold;
+          padding: $grid-1x $grid-2x;
+          &:hover {
+            color: $black;
+          }
+        }
+      }
+    }
+  }
+
+  .user-menu {
+    color: $territory-text;
+    .user-icon {
+      font-size: 1.2rem;
+      margin-top: $half-grid;
+    }
+  }
+
+  .menu-anchor {
+    svg {
+      fill: $territory-text;
+      font-size: 1.1rem;
+    }
+  }
+}
+
+//1024 and down
+@media only screen and (max-width: $breakpoint-sm-desktop) {
+  /*-------| Courtesy |--------*/
+  .curtesy {
+    display: none;
+  }
+
+  /*-------| Header |--------*/
+  header {
+    .container {
+      padding: $half-grid;
+    }
+    .logo {
+      a {
+        margin: 0 auto;
+      }
+    }
+
+    .mobile-nav {
+      padding: $grid-1x;
+      svg {
+        fill: $secondary-hover;
+        font-size: 1.3rem;
+
+        &:hover {
+          fill: $black;
+        }
+      }
+    }
+
+    button.MuiButtonBase-root.primary-btn {
+      padding: $grid-1x;
+    }
+  }
+}

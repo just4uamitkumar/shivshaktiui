@@ -1,0 +1,22 @@
+@import '../../../styles/variables';
+@import '../../../styles/colors';
+
+/*-------| SocialLinks |--------*/
+ul.socialLinks {
+  li {
+    list-style: none;
+    display: inline-block;
+    margin-left: $grid-1x;
+    button {
+      background-color: $secondary-hover;
+      svg {
+        fill: $white;
+        font-size: 0.8rem;
+      }
+
+      &:hover {
+        background-color: $primary;
+      }
+    }
+  }
+}

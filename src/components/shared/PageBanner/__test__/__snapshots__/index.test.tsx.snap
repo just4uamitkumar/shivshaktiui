@@ -1,0 +1,17 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`PageBanner Component > matches snapshot 1`] = `
+<div>
+  <div
+    class="MuiGrid-root MuiGrid-container MuiGrid-direction-xs-row pageBanner css-d64g0g-MuiGrid-root"
+  >
+    <div
+      class="MuiGrid-root MuiGrid-direction-xs-row container css-17fpwt7-MuiGrid-root"
+    >
+      <div
+        class="MuiStack-root pageTitle css-nen11g-MuiStack-root"
+      />
+    </div>
+  </div>
+</div>
+`;
