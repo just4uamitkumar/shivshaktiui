@@ -1,6 +1,6 @@
 import { Grid, Stack } from "@mui/material";
 import React from "react";
-import shivLing from "../../../styles/assets/images/system/shivling.png";
+import shivLing from "../../../styles/assets/images/system/shivlingA.png";
 import temple from "../../../styles/assets/images/system/temple.png";
 import swastik from "../../../styles/assets/images/system/swastik.png";
 import TypoGraphy from "../../common/TypoGraphy";
