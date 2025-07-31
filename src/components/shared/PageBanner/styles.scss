@@ -1,14 +1,14 @@
-@use "../../../styles/variables.scss";
-@use "../../../styles/colors.scss";
-@use "../../../styles/mixins.scss";
+@import "../../../styles/variables.scss";
+@import "../../../styles/colors.scss";
+@import "../../../styles/mixins.scss";
 
 .pageBanner {
   background: linear-gradient(90deg, #ff7e5f 0%, #feb47b 100%);
-  padding: variables.$grid-4x 0;
+  padding: $grid-4x 0;
   .pageTitle {
-    color: colors.$white;
+    color: $white;
     font-size: 1.8rem;
-    font-family: variables.$SodoSansBold;
+    font-family: $SodoSansBold;
     line-height: 1.2;
   }
 }

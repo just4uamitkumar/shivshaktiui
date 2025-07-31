@@ -14,7 +14,6 @@ export interface JyotirliingState {
 const initialState: JyotirliingState = {
   data: [
     {
-      _id: "0",
       name: "string",
       city: "string",
       state: "string",

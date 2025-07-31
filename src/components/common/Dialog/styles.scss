@@ -1,42 +1,42 @@
-@use "../../../styles/variables.scss";
-@use "../../../styles/colors.scss";
-@use "../../../styles/mixins.scss";
+@import "../../../styles/variables.scss";
+@import "../../../styles/colors.scss";
+@import "../../../styles/mixins.scss";
 
 .confirm-dialog {
   .MuiPaper-root {
-    background-color: colors.$white;
-    @include mixins.roundCorner(variables.$grid-1x);
-    padding: 0 0 variables.$grid-1x;
+    background-color: $white;
+    @include roundCorner($grid-1x);
+    padding: 0 0 $grid-1x;
     overflow: hidden;
 
     .dialog-header {
-      background-color: colors.$secondary-hover;
-      padding: 0 variables.$grid-2x;
+      background-color: $secondary-hover ;
+      padding: 0 $grid-2x;
       h2 {
         font-size: 1.1rem;
-        font-family: variables.$SodoSans;
-        color: colors.$territory;
-        padding: variables.$grid-1x 0 variables.$half-grid;
+        font-family: $SodoSans;
+        color: $territory;
+        padding: $grid-1x 0 $half-grid;
       }
 
       button {
-        color: colors.$territory;
+        color: $territory;
       }
     }
 
     .dialog-content {
-      padding: calc(variables.$grid-1x - 2px) calc(variables.$grid-1x);
+      padding: calc($grid-1x - 2px) calc($grid-1x);
     }
 
     .MuiDialogActions-root {
       flex-direction: "row";
-      padding: variables.$grid-2x variables.$grid-1x calc(variables.$grid-1x/2);
+      padding: $grid-2x $grid-1x calc($grid-1x/2);
 
       button {
         width: 100%;
         font-size: 1.1rem;
-        margin: 0 calc(variables.$grid-1x - 4px) calc(variables.$grid-1x - 4px);
-        padding: variables.$grid-1x 0;
+        margin: 0 calc($grid-1x - 4px) calc($grid-1x - 4px);
+        padding: $grid-1x 0;
       }
     }
   }

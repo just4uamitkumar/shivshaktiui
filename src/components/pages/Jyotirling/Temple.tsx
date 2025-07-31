@@ -5,7 +5,6 @@ import CustomBtn from "../../common/Button";
 import { navigateUrl, truncateText } from "../../../utils/commonFunc";
 import { useViewportWidth } from "../../../utils/hooks";
 import { tablet } from "../../../utils/constants";
-// import type { JyotirliingType } from "../../../features/jyotirling/type";
 
 interface Props {
   id: string;

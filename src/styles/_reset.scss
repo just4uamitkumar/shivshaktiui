@@ -1,7 +1,7 @@
-@use "variables";
-@use "colors";
-@use "mixins";
-@use "buttons";
+@import "variables";
+@import "colors";
+@import "mixins";
+@import "buttons";
 
 * {
   margin: 0;
@@ -11,8 +11,8 @@
 /*--------| HTML, Body |---------*/
 html {
   line-height: 1.38;
-  font-family: variables.$SodoSans;
-  color: colors.$primary-text;
+  font-family: $SodoSans;
+  color: $primary-text;
 }
 
 /*--------| Alignment |---------*/
@@ -45,8 +45,8 @@ h1.MuiTypography-root {
 h2.MuiTypography-root {
   font-size: 2.1rem;
   line-height: 1.2;
-  font-family: variables.$SodoSansSemiBold;
-  color: colors.$black300;
+  font-family: $SodoSansSemiBold;
+  color: $black300;
 }
 
 h3.MuiTypography-root {
@@ -56,8 +56,8 @@ h3.MuiTypography-root {
 
 h4.MuiTypography-root {
   font-size: 1.4rem;
-  font-family: variables.$SodoSansSemiBold;
-  color: colors.$black300;
+  font-family: $SodoSansSemiBold;
+  color: $black300;
 }
 
 h5.MuiTypography-root {
@@ -74,202 +74,202 @@ h6.MuiTypography-root {
 
 /*--------| Spacing |---------*/
 .p-1 {
-  padding: variables.$grid-1x;
+  padding: $grid-1x;
 }
 
 .p-2 {
-  padding: variables.$grid-2x;
+  padding: $grid-2x;
 }
 
 .p-3 {
-  padding: variables.$grid-3x;
+  padding: $grid-3x;
 }
 
 .p-4 {
-  padding: variables.$grid-4x;
+  padding: $grid-4x;
 }
 .pt-1 {
-  padding-top: variables.$grid-1x;
+  padding-top: $grid-1x;
 }
 
 .pt-2 {
-  padding-top: variables.$grid-2x;
+  padding-top: $grid-2x;
 }
 
 .pt-3 {
-  padding-top: variables.$grid-3x;
+  padding-top: $grid-3x;
 }
 
 .pt-4 {
-  padding-top: variables.$grid-4x;
+  padding-top: $grid-4x;
 }
 
 .pb-1 {
-  padding-bottom: variables.$grid-1x;
+  padding-bottom: $grid-1x;
 }
 
 .pb-2 {
-  padding-bottom: variables.$grid-2x;
+  padding-bottom: $grid-2x;
 }
 
 .pb-3 {
-  padding-bottom: variables.$grid-3x;
+  padding-bottom: $grid-3x;
 }
 
 .pb-4 {
-  padding-bottom: variables.$grid-4x;
+  padding-bottom: $grid-4x;
 }
 
 .pl-1 {
-  padding-left: variables.$grid-1x;
+  padding-left: $grid-1x;
 }
 
 .pl-2 {
-  padding-left: variables.$grid-2x;
+  padding-left: $grid-2x;
 }
 
 .pl-3 {
-  padding-left: variables.$grid-3x;
+  padding-left: $grid-3x;
 }
 
 .pl-4 {
-  padding-left: variables.$grid-4x;
+  padding-left: $grid-4x;
 }
 
 .pr-1 {
-  padding-right: variables.$grid-1x;
+  padding-right: $grid-1x;
 }
 
 .pr-2 {
-  padding-right: variables.$grid-2x;
+  padding-right: $grid-2x;
 }
 
 .pr-3 {
-  padding-right: variables.$grid-3x;
+  padding-right: $grid-3x;
 }
 
 .pr-4 {
-  padding-right: variables.$grid-4x;
+  padding-right: $grid-4x;
 }
 
 .mt-1 {
-  margin-top: variables.$grid-1x;
+  margin-top: $grid-1x;
 }
 
 .mt-2 {
-  margin-top: variables.$grid-2x;
+  margin-top: $grid-2x;
 }
 
 .mt-3 {
-  margin-top: variables.$grid-3x;
+  margin-top: $grid-3x;
 }
 
 .mt-4 {
-  margin-top: variables.$grid-4x;
+  margin-top: $grid-4x;
 }
 
 .mb-1 {
-  margin-bottom: variables.$grid-1x;
+  margin-bottom: $grid-1x;
 }
 
 .mb-2 {
-  margin-bottom: variables.$grid-2x;
+  margin-bottom: $grid-2x;
 }
 
 .mb-3 {
-  margin-bottom: variables.$grid-3x;
+  margin-bottom: $grid-3x;
 }
 
 .mb-4 {
-  margin-bottom: variables.$grid-4x;
+  margin-bottom: $grid-4x;
 }
 
 .ml-1 {
-  margin-left: variables.$grid-1x;
+  margin-left: $grid-1x;
 }
 
 .ml-2 {
-  margin-left: variables.$grid-2x;
+  margin-left: $grid-2x;
 }
 
 .ml-3 {
-  margin-left: variables.$grid-3x;
+  margin-left: $grid-3x;
 }
 
 .ml-4 {
-  margin-left: variables.$grid-4x;
+  margin-left: $grid-4x;
 }
 
 .mr-1 {
-  margin-right: variables.$grid-1x;
+  margin-right: $grid-1x;
 }
 
 .mr-2 {
-  margin-right: variables.$grid-2x;
+  margin-right: $grid-2x;
 }
 
 .mr-3 {
-  margin-right: variables.$grid-3x;
+  margin-right: $grid-3x;
 }
 
 .mr-4 {
-  margin-right: variables.$grid-4x;
+  margin-right: $grid-4x;
 }
 
 /*-------| Color Classes |--------*/
 .white {
-  color: colors.$white;
+  color: $white;
 }
 
 .black {
-  color: colors.$black;
+  color: $black;
 }
 
 .green500 {
-  color: colors.$green500;
+  color: $green500;
 }
 .blue{
-  color: colors.$territory-text;
+  color: $territory-text;
 }
 
 .primary-text {
-  color: colors.$primary-text;
+  color: $primary-text;
 }
 
 .primary-text-hover {
-  color: colors.$primary-text-hover;
+  color: $primary-text-hover;
 }
 
 .secondary-text {
-  color: colors.$secondary-text;
+  color: $secondary-text;
 }
 
 .line-through{
   text-decoration: line-through;
 }
 .danger-text{
-  color: colors.$red500;
+  color:$red500;
 }
 
 
 /*-------| Fonts Classes |--------*/
 .MuiTypography-root {
   &.regular-font {
-    font-family: variables.$SodoSans;
+    font-family: $SodoSans;
   }
   &.regularItalic-font {
-    font-family: variables.$SodoSansItalic;
+    font-family: $SodoSansItalic;
   }
 
   &.semi-bold-font {
-    font-family: variables.$SodoSansSemiBold;
+    font-family: $SodoSansSemiBold;
   }
 
   &.semi-bold-italic {
-    font-family: variables.$SodoSansSemiBoldItalic;
+    font-family: $SodoSansSemiBoldItlic;
   }
 
   &.bold-font {
-    font-family: variables.$SodoSansBold;
+    font-family: $SodoSansBold;
   }
 }

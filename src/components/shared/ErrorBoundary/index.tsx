@@ -1,35 +1,18 @@
-import { Component, type ReactNode, type ErrorInfo } from 'react';
+ import React from 'react';
+ import { ErrorBoundary } from "react-error-boundary";
 
-interface Props {
-  children: ReactNode;
-  fallback?: ReactNode;
-}
+ const logError = (error: Error, info: { componentStack: string }) => {
+   console.log('error', error);
+   console.log('info', info);
+ };
 
-interface State {
-  hasError: boolean;
-}
-
-class ErrorBoundary extends Component<Props, State> {
-  state: State = {
-    hasError: false,
-  };
-
-  static getDerivedStateFromError(): State {
-    return { hasError: true };
-  }
-
-  componentDidCatch(error: Error, info: ErrorInfo) {
-    console.error('ErrorBoundary caught an error:', error, info);
-    // You can also log error to a reporting service here
-  }
-
-  render() {
-    if (this.state.hasError) {
-      return this.props.fallback || <h2>Something went wrong.</h2>;
-    }
-
-    return this.props.children;
-  }
-}
-
-export default ErrorBoundary;
+ const Fallback = ({ error, resetErrorBoundary }) => {
+   
+   resetErrorBoundary ()
+   return (
+     <div role="alert">
+       <p>Something went wrong:</p>
+       <pre style={{ color: "red" }}>{error.message}</pre>
+     </div>
+   );
+ }

@@ -1,11 +1,11 @@
-@use "../../../styles/variables";
-@use "../../../styles/colors";
+@import "../../../styles/variables";
+@import "../../../styles/colors";
 
 /*-------| Courtesy |--------*/
 .curtesy {
-  background: colors.$secondary;
-  color: colors.$territory-hover;
-  padding: variables.$half-grid 0;
+  background: $secondary;
+  color: $territory-hover;
+  padding: $half-grid 0;
   align-items: center;
 
   .curtseyLinks {
@@ -14,11 +14,11 @@
 
       li {
         display: inline-block;
-        padding-top: variables.$half-grid;
+        padding-top: $half-grid;
         position: relative;
         &::before {
           content: "-";
-          color: colors.$secondary-text;
+          color: $secondary-text;
         }
 
         &:first-child {
@@ -27,12 +27,12 @@
           }
         }
         a {
-          color: colors.$territory-hover;
+          color: $territory-hover;
           font-size: 0.8rem;
           text-decoration: none;
-          padding: variables.$grid-1x variables.$grid-2x variables.$half-grid;
+          padding: $grid-1x $grid-2x $half-grid;
           &:hover {
-            color: colors.$white100;
+            color: $white100;
           }
         }
       }
@@ -42,16 +42,16 @@
 
 /*-------| Header |--------*/
 header {
-  background-color: colors.$white;
+  background-color: $white;
   .container {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: variables.$grid-1x 0;
+    padding: $grid-1x 0;
   }
   .logo {
     a {
-      width: calc(variables.$default-grid * 18);
+      width: calc($default-grid * 18);
       img {
         width: 100%;
       }
@@ -65,12 +65,12 @@ header {
 
       li {
         a {
-          color: colors.$black300;
+          color: $black300;
           text-decoration: none;
-          font-family: variables.$SodoSansSemiBold;
-          padding: variables.$grid-1x variables.$grid-2x;
+          font-family: $SodoSansSemiBold;
+          padding: $grid-1x $grid-2x;
           &:hover {
-            color: colors.$black;
+            color: $black;
           }
         }
       }
@@ -78,23 +78,23 @@ header {
   }
 
   .user-menu {
-    color: colors.$territory-text;
+    color: $territory-text;
     .user-icon {
       font-size: 1.2rem;
-      margin-top: variables.$half-grid;
+      margin-top: $half-grid;
     }
   }
 
   .menu-anchor {
     svg {
-      fill: colors.$territory-text;
+      fill: $territory-text;
       font-size: 1.1rem;
     }
   }
 }
 
 //1024 and down
-@media only screen and (max-width: variables.$breakpoint-sm-desktop) {
+@media only screen and (max-width: $breakpoint-sm-desktop) {
   /*-------| Courtesy |--------*/
   .curtesy {
     display: none;
@@ -103,7 +103,7 @@ header {
   /*-------| Header |--------*/
   header {
     .container {
-      padding: variables.$half-grid;
+      padding: $half-grid;
     }
     .logo {
       a {
@@ -112,19 +112,19 @@ header {
     }
 
     .mobile-nav {
-      padding: variables.$grid-1x;
+      padding: $grid-1x;
       svg {
-        fill: colors.$secondary-hover;
+        fill: $secondary-hover;
         font-size: 1.3rem;
 
         &:hover {
-          fill: colors.$black;
+          fill: $black;
         }
       }
     }
 
     button.MuiButtonBase-root.primary-btn {
-      padding: variables.$grid-1x;
+      padding: $grid-1x;
     }
   }
 }

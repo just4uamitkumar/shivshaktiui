@@ -4,7 +4,7 @@ export type Location = {
 };
 
 export type JyotirliingType = {
-  _id: string;
+    _id: string;
   name: string;
   city: string;
   state: string;

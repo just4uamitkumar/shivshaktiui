@@ -1,4 +1,4 @@
-@use "../../../styles/colors";
+@import "../../../styles//colors";
 
 .loader {
     &.fullScreen {
@@ -7,7 +7,7 @@
         left: 0;
         right: 0;
         bottom: 0;
-        background-color: colors.$green800;
+        background-color: $green800;;
         z-index: 2;
     }
 
@@ -16,6 +16,6 @@
     align-items: center;
 
     span.MuiCircularProgress-root {
-        color: colors.$secondary;
+        color: $secondary;
     }
 }
