@@ -1,28 +1,28 @@
-@import "../../../styles/variables.scss";
-@import "../../../styles/colors.scss";
-@import "../../../styles/mixins.scss";
+@use "../../../styles/variables.scss";
+@use "../../../styles/colors.scss";
+@use "../../../styles/mixins.scss";
 
 .drawer {
   .MuiPaper-root {
-    width: calc(5 * $grid-9x);
+    width: calc(5 * variables.$grid-9x);
   }
 
   header {
-    background-color: $black300;
-    padding: $grid-2x;
+    background-color: colors.$black300;
+    padding: variables.$grid-2x;
     display: flex;
     justify-content: space-between;
     align-items: center;
 
     h4.MuiTypography-root {
       font-size: 1.3rem;
-      color: $white;
-      font-family: $SodoSansSemiBold;
+      color: colors.$white;
+      font-family: variables.$SodoSansSemiBold;
     }
 
     button {
       padding: 0;
-      color: $white;
+      color: colors.$white;
       svg {
         font-size: 1.2rem;
       }
@@ -34,24 +34,24 @@
     bottom: 0;
     left: 0;
     right: 0;
-    border-top: 1px solid $secondary;
-    padding: $grid-1x $grid-2x;
+    border-top: 1px solid colors.$secondary;
+    padding: variables.$grid-1x variables.$grid-2x;
     background-color: transparent;
-    width: calc(100% - $grid-4x);
+    width: calc(100% - variables.$grid-4x);
     display: flex;
     justify-content: flex-end;
 
     button.primary-btn {
-      margin-right: $grid-1x;
+      margin-right: variables.$grid-1x;
     }
   }
 }
 
 //1024 and down
-@media only screen and (max-width: $breakpoint-sm-desktop) {
+@media only screen and (max-width: variables.$breakpoint-sm-desktop) {
   .drawer {
     .MuiPaper-root {
-      width: calc(5 * $grid-7x);
+      width: calc(5 * variables.$grid-7x);
     }
   }
 }

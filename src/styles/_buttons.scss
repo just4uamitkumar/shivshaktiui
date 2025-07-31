@@ -1,63 +1,63 @@
-@import "variables";
-@import "colors";
-@import "mixins";
+@use "variables";
+@use "colors";
+@use "mixins";
 
 /*-------| Button Classes |--------*/
 button.MuiButtonBase-root {
   font-size: 1rem;
-  font-family: $SodoSans;
+  font-family: variables.$SodoSans;
   text-transform: none;
   transition: all 0.6s ease-in-out;
 
   &.primary-btn {
-    background-color: $primary;
-    color: $white;
-    padding: $grid-1x $grid-3x;
+    background-color: colors.$primary;
+    color: colors.$white;
+    padding: variables.$grid-1x variables.$grid-3x;
 
     &:hover {
-      background-color: $orange300;
+      background-color: colors.$orange300;
     }
 
     &.MuiButton-text {
       background-color: transparent;
-      color: $territory-text;
-      padding: $grid-1x $grid-2x;
+      color: colors.$territory-text;
+      padding: variables.$grid-1x variables.$grid-2x;
     }
 
     &.MuiButton-outlined {
-      background-color: $white;
-      border: 1px solid $primary;
-      color: $orange;
-      padding: $grid-1x $grid-3x;
+      background-color: colors.$white;
+      border: 1px solid colors.$primary;
+      color: colors.$orange;
+      padding: variables.$grid-1x variables.$grid-3x;
 
       &:hover {
-        background-color: $primary;
-        color: $white;
+        background-color: colors.$primary;
+        color: colors.$white;
       }
     }
   }
 
   &.secondary-btn {
-    background-color: $white;
-    border: 1px solid $primary;
-    color: $orange;
-    padding: $grid-1x $grid-3x;
+    background-color: colors.$white;
+    border: 1px solid colors.$primary;
+    color: colors.$orange;
+    padding: variables.$grid-1x variables.$grid-3x;
     transition: all 0.6s ease-in-out;
 
     &:hover {
-      background-color: $orange;
-      color: $white;
+      background-color: colors.$orange;
+      color: colors.$white;
     }
   }
   &.cancel-btn {
-    background-color: $white;
-    border: 1px solid $territory-text;
-    color: $territory-text;
-    padding: $grid-1x $grid-3x;
+    background-color: colors.$white;
+    border: 1px solid colors.$territory-text;
+    color: colors.$territory-text;
+    padding: variables.$grid-1x variables.$grid-3x;
     transition: all 0.6s ease-in-out;
 
     &:hover {
-      background-color: $blue700;
+      background-color: colors.$blue700;
     }
   }
 }
@@ -69,54 +69,54 @@ button.MuiIconButton-root {
   transition: all 0.6s ease-in-out;
 
   &.primary-btn {
-    background-color: $primary;
-    color: $white;
-    padding: $grid-1x;
+    background-color: colors.$primary;
+    color: colors.$white;
+    padding: variables.$grid-1x;
 
     &:hover {
-      background-color: $orange300;
+      background-color: colors.$orange300;
     }
 
     &.MuiButton-text {
       background-color: transparent;
-      color: $territory-text;
-      padding: $grid-1x;
+      color: colors.$territory-text;
+      padding: variables.$grid-1x;
     }
 
     &.MuiButton-outlined {
-      background-color: $white;
-      border: 1px solid $primary;
-      color: $orange;
-      padding: $grid-1x;
+      background-color: colors.$white;
+      border: 1px solid colors.$primary;
+      color: colors.$orange;
+      padding: variables.$grid-1x;
 
       &:hover {
-        background-color: $primary;
-        color: $white;
+        background-color: colors.$primary;
+        color: colors.$white;
       }
     }
   }
 
   &.secondary-btn {
-    background-color: $white;
-    border: 1px solid $primary;
-    color: $orange;
-    padding: $grid-1x;
+    background-color: colors.$white;
+    border: 1px solid colors.$primary;
+    color: colors.$orange;
+    padding: variables.$grid-1x;
     transition: all 0.6s ease-in-out;
 
     &:hover {
-      background-color: $orange;
-      color: $white;
+      background-color: colors.$orange;
+      color: colors.$white;
     }
   }
   &.cancel-btn {
-    background-color: $white;
-    border: 1px solid $territory-text;
-    color: $territory-text;
-    padding: $grid-1x;
+    background-color: colors.$white;
+    border: 1px solid colors.$territory-text;
+    color: colors.$territory-text;
+    padding: variables.$grid-1x;
     transition: all 0.6s ease-in-out;
 
     &:hover {
-      background-color: $blue700;
+      background-color: colors.$blue700;
     }
   }
 }
