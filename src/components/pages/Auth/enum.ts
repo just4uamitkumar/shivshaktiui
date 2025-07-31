@@ -7,10 +7,4 @@ export const AuthEnum = {
     existEmail: 'Email is already registered',
     invalidPassword: 'Please enter a valid password', 
     notSamePassword: 'confirm password and password are not same',
-<<<<<<< HEAD
 } as const;
-
-export type AuthEnum = typeof AuthEnum[keyof typeof AuthEnum];
-=======
-} as const;
->>>>>>> 843d9bc87c7605cc8231f3cb4e91c6f617535db5
