@@ -1,18 +1,21 @@
-@import "fonts";
-@import "reset";
-@import "inheritance";
+@use "fonts";
+@use "reset";
+@use "inheritance";
+@use "variables";
+@use "colors";
+@use "mixins";
 
 /*-------| Main |--------*/
 html {
   font-size: 18px;
-  font-family: $SodoSans;
-  color: $primary-text;
+  font-family:variables.$SodoSans;
+  color: colors.$primary-text;
 }
 body {
-  background-color: $white400;
+  background-color: colors.$white400;
 }
 main {
-  padding: calc($grid-2x + 4px) 0 0;
+  padding: calc(variables.$grid-2x + 4px) 0 0;
 }
 
 .container {
@@ -24,15 +27,15 @@ main {
 /*-------| DropDown menu |--------*/
 .dropdown-menu {
   .MuiMenu-paper {
-    @include boxShadow(-1px 0px 11px rgba(0, 0, 0, 0.3));
-    border-radius: 0 0 $grid-1x $grid-1x;
+    @include mixins.boxShadow(-1px 0px 11px rgba(0, 0, 0, 0.3));
+    border-radius: 0 0 variables.$grid-1x variables.$grid-1x;
 
     ul {
       li {
         font-size: 0.9rem;
-        color: $secondary-hover;
+        color: colors.$secondary-hover;
         &:hover {
-          color: $secondary;
+          color: colors.$secondary;
         }
       }
     }
@@ -41,33 +44,33 @@ main {
 
 /*-------| Footer |--------*/
 footer {
-  background: $black;
+  background: colors.$black;
   .logo {
     img {
-      width: calc($default-grid * 18);
+      width: calc(variables.$default-grid * 18);
     }
   }
   p.MuiTypography-root {
     font-size: 0.9rem;
-    color: $white;
-    font-family: $SodoSans;
+    color: colors.$white;
+    font-family: variables.$SodoSans;
   }
   h4.MuiTypography-root {
-    color: $white;
-    padding-bottom: $grid-1x;
+    color: colors.$white;
+    padding-bottom: variables.$grid-1x;
   }
 
   .footer-links {
     ul {
       list-style: none;
       li {
-        padding: $grid-1x 0;
+        padding: variables.$grid-1x 0;
         a {
-          color: $white;
+          color: colors.$white;
           font-size: 0.9rem;
           text-decoration: none;
           &:hover {
-            color: $orange;
+            color: colors.$orange;
           }
         }
       }
@@ -80,7 +83,7 @@ footer {
   position: relative;
   background: linear-gradient(90deg, #ff7e5f 0%, #feb47b 100%);
   background-repeat: no-repeat;
-  color: $territory;
+  color: colors.$territory;
   text-align: center;
 
   .lordShiva {
@@ -91,41 +94,41 @@ footer {
   }
 
   h1.MuiTypography-root {
-    font-family: $SodoSansSemiBold;
+    font-family: variables.$SodoSansSemiBold;
     font-size: 5rem;
   }
   h2.MuiTypography-root {
-    font-family: $SodoSansSemiBold;
+    font-family: variables.$SodoSansSemiBold;
     font-size: 2rem;
-    color: $territory;
+    color: colors.$territory;
   }
   .circle {
-    width: $grid-3x * 5;
-    height: $grid-3x * 5;
+    width: variables.$grid-3x * 5;
+    height: variables.$grid-3x * 5;
     border-radius: 50%;
     display: flex;
     justify-content: center;
     align-items: center;
-    color: $territory;
+    color: colors.$territory;
   }
 
   .dateCircle {
-    background-color: $black300;
-    border: double 5px $white300;
+    background-color: colors.$black300;
+    border: double 5px colors.$white300;
   }
 
   .timeCircle {
-    background-color: $black600;
-    border: double 5px $white300;
+    background-color: colors.$black600;
+    border: double 5px colors.$white300;
   }
 }
 
 /*-------| Section1 |--------*/
 .section1 {
   .container {
-    background-color: $white;
-    padding: $grid-5x;
-    @include boxShadow(rgba(0, 0, 0, 0.1) 3px 4px 122px 0px);
+    background-color: colors.$white;
+    padding: variables.$grid-5x;
+    @include mixins.boxShadow(rgba(0, 0, 0, 0.1) 3px 4px 122px 0px);
   }
 
   .imgWrap {
@@ -139,19 +142,19 @@ footer {
       list-style: none;
       li {
         display: inline-block;
-        margin-left: $grid-1x;
+        margin-left: variables.$grid-1x;
         button {
-          background-color: $orange;
-          border: 1px solid $orange;
+          background-color: colors.$orange;
+          border: 1px solid colors.$orange;
           transition: all 0.6s ease-in-out;
           svg {
-            fill: $white;
+            fill: colors.$white;
           }
 
           &:hover {
-            background-color: $white;
+            background-color: colors.$white;
             svg {
-              fill: $orange;
+              fill: colors.$orange;
             }
           }
         }
@@ -160,27 +163,27 @@ footer {
   }
 
   h1 {
-    margin-top: $grid-3x;
-    color: $black;
-    font-family: $SodoSansSemiBold;
+    margin-top: variables.$grid-3x;
+    color: colors.$black;
+    font-family: variables.$SodoSansSemiBold;
     font-size: 3rem;
   }
 
   .duration {
-    padding: $grid-3x 0;
+    padding: variables.$grid-3x 0;
     p {
-      color: $orange;
-      font-family: $SodoSans;
+      color: colors.$orange;
+      font-family: variables.$SodoSans;
       svg {
-        margin-top: $half-grid;
+        margin-top: variables.$half-grid;
       }
     }
   }
 
   .section-text {
     p {
-      color: $black400;
-      font-family: $SodoSans;
+      color: colors.$black400;
+      font-family: variables.$SodoSans;
     }
   }
 }
@@ -193,14 +196,14 @@ footer {
     .imgWrap {
       img {
         width: 50%;
-        margin: $grid-2x auto;
+        margin: variables.$grid-2x auto;
       }
     }
 
     .section-text {
       p {
-        color: $black400;
-        font-family: $SodoSans;
+        color: colors.$black400;
+        font-family: variables.$SodoSans;
       }
     }
   }
@@ -211,14 +214,14 @@ footer {
   .widget {
     .widget-text {
       &.left {
-        margin-right: $grid-5x;
+        margin-right: variables.$grid-5x;
       }
       &.right {
-        margin-left: $grid-5x;
+        margin-left: variables.$grid-5x;
       }
 
       .textSource {
-        color: $orange;
+        color: colors.$orange;
       }
     }
     .widget-img {
@@ -231,14 +234,14 @@ footer {
 
 /*-------| Form |--------*/
 .formWrapper {
-  padding: $grid-2x;
+  padding: variables.$grid-2x;
 }
 
 /*-------| Product Page |--------*/
 .ProductCard {
-  padding: $grid-1x;
-  margin: $grid-1x 0;
-  background-color: $white200;
+  padding: variables.$grid-1x;
+  margin: variables.$grid-1x 0;
+  background-color: colors.$white200;
 
   h4.MuiTypography-root {
     font-size: 1.2rem;
@@ -251,26 +254,26 @@ footer {
   }
 
   .price {
-    margin: $grid-1x 0;
+    margin: variables.$grid-1x 0;
 
     .buyPrice {
-      color: $primary;
+      color: colors.$primary;
     }
   }
 
   .shippingInfo {
-    margin: $grid-1x 0;
+    margin: variables.$grid-1x 0;
   }
 }
 
 .pagination {
   .activePage {
-    color: $territory-text;
+    color: colors.$territory-text;
   }
 
   span {
-    padding: 0 $grid-1x;
-    margin: 0 $grid-1x;
+    padding: 0 variables.$grid-1x;
+    margin: 0 variables.$grid-1x;
     cursor: pointer;
 
     &.disable {
@@ -281,7 +284,7 @@ footer {
 
 /*-------| Product Detail Page |--------*/
 .ProductDetail {
-  margin: $grid-3x 0;
+  margin: variables.$grid-3x 0;
   .img-wrap {
     img {
       width: 100%;
@@ -292,8 +295,8 @@ footer {
 /*-------| Profile Page |--------*/
 .profile-container {
   .left-side {
-    background-color: $white200;
-    padding: $grid-2x;
+    background-color: colors.$white200;
+    padding: variables.$grid-2x;
   }
 }
 
@@ -301,7 +304,7 @@ footer {
   justify-content: center;
   svg {
     font-size: 10rem;
-    fill: $black300;
+    fill: colors.$black300;
     width: 100%;
   }
 
