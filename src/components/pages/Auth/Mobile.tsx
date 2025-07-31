@@ -60,17 +60,17 @@ const Mobile: React.FC<Props> = ({ user, onUpdate }) => {
   };
 
   const handleAddSnack = (
-    event: React.SyntheticEvent | Event,
+    _event: React.SyntheticEvent | Event,
     reason: string
-  ) => {
+  ): void => {
     if (reason === "clickaway") return;
     setAddSnack(false);
   };
 
   const handleErrorSnack = (
-    event: React.SyntheticEvent | Event,
+    _event: React.SyntheticEvent | Event,
     reason: string
-  ) => {
+  ): void => {
     if (reason === "clickaway") return;
     setErrorSnack(false);
   };
