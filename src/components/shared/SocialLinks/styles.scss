@@ -1,21 +1,21 @@
-@import '../../../styles/variables';
-@import '../../../styles/colors';
+@use '../../../styles/variables';
+@use '../../../styles/colors';
 
 /*-------| SocialLinks |--------*/
 ul.socialLinks {
   li {
     list-style: none;
     display: inline-block;
-    margin-left: $grid-1x;
+    margin-left: variables.$grid-1x;
     button {
-      background-color: $secondary-hover;
+      background-color: colors.$secondary-hover;
       svg {
-        fill: $white;
+        fill: colors.$white;
         font-size: 0.8rem;
       }
 
       &:hover {
-        background-color: $primary;
+        background-color: colors.$primary;
       }
     }
   }
