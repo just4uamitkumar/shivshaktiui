@@ -17,6 +17,9 @@ import Jyotirling from "./components/pages/Jyotirling/index.tsx";
 import Gallery from "./components/pages/Gallery/index.tsx";
 import Loader from "./components/shared/Loader/index.tsx";
 import ProductDetail from "./components/pages/Products/ProductDetail.tsx";
+import Contact from "./components/pages/Contact/index.tsx";
+import Blog from "./components/pages/Blog/index.tsx";
+import NotFound from "./components/pages/NotFound/index.tsx";
 const Products = lazy(() => import("./components/pages/Products"));
 
 const router = createBrowserRouter(
@@ -41,7 +44,9 @@ const router = createBrowserRouter(
       <Route path="/Product/:id" element={<ProductDetail />} />
       <Route path="/Jyotirling" element={<Jyotirling />} />
       <Route path="/Gallery" element={<Gallery />} />
-      <Route path="*" element={<h1>404 - Page Not Found</h1>} />
+      <Route path="/Contact" element={<Contact />} />
+      <Route path="/Blog" element={<Blog />} />
+      <Route path="*" element={<NotFound />} />
     </Route>
   )
 );
