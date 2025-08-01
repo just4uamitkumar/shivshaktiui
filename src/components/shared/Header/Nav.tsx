@@ -6,9 +6,6 @@ const Nav: React.FC = () => {
       <nav>
         <ul>
           <li>
-            <Link to="/about">Pages</Link>
-          </li>
-          <li>
             <Link to="/Jyotirling">Jyotirlings</Link>
           </li>
 
@@ -19,10 +16,10 @@ const Nav: React.FC = () => {
             <Link to="/Gallery">Gallery</Link>
           </li>
           <li>
-            <Link to="/contact">Contact</Link>
+            <Link to="/Contact">Contact</Link>
           </li>
           <li>
-            <Link to="/blog">Blog</Link>
+            <Link to="/Blog">Blog</Link>
           </li>
         </ul>
       </nav>
