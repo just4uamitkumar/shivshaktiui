@@ -1,6 +1,14 @@
 @use "../../../styles/colors";
 
 .loader {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    span.MuiCircularProgress-root {
+        color: colors.$secondary-text;
+    }
+
     &.fullScreen {
         position: fixed;
         top: 0;
@@ -11,11 +19,4 @@
         z-index: 2;
     }
 
-    display: flex;
-    justify-content: center;
-    align-items: center;
-
-    span.MuiCircularProgress-root {
-        color: colors.$secondary;
-    }
 }
