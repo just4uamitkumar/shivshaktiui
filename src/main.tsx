@@ -12,7 +12,7 @@ import {
 import Home from "./components/pages/Home";
 import { Provider } from "react-redux";
 import store from "./redux/store/index.tsx";
-import Profile from "./components/pages/Auth/Profile.tsx";
+import Profile from "./components/pages/Auth/Profile/index.tsx";
 import Jyotirling from "./components/pages/Jyotirling/index.tsx";
 import Gallery from "./components/pages/Gallery/index.tsx";
 import Loader from "./components/shared/Loader/index.tsx";
@@ -21,6 +21,8 @@ import Contact from "./components/pages/Contact/index.tsx";
 import Blog from "./components/pages/Blog/index.tsx";
 import NotFound from "./components/pages/NotFound/index.tsx";
 const Products = lazy(() => import("./components/pages/Products"));
+const WelcomeUser = lazy(() => import("./components/pages/Auth/WelcomeUser"));
+const LoggedOut = lazy(() => import("./components/pages/Auth/LoggedOut"));
 
 const router = createBrowserRouter(
   createRoutesFromElements(
@@ -38,6 +40,34 @@ const router = createBrowserRouter(
             }
           >
             <Products />
+          </Suspense>
+        }
+      />
+      <Route
+        path="/Welcome"
+        element={
+          <Suspense
+            fallback={
+              <>
+                <Loader />
+              </>
+            }
+          >
+            <WelcomeUser />
+          </Suspense>
+        }
+      />
+      <Route
+        path="/LoggedOut"
+        element={
+          <Suspense
+            fallback={
+              <>
+                <Loader />
+              </>
+            }
+          >
+            <LoggedOut />
           </Suspense>
         }
       />

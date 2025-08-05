@@ -235,7 +235,27 @@ footer {
 /*-------| Form |--------*/
 .formWrapper {
   padding: variables.$grid-2x;
+
+  // input{
+  //   padding: variables.$grid-1x;
+  // }
 }
+
+.password-rules {
+  list-style: disc;
+  padding: 0 variables.$grid-2x;
+
+  li {
+    font-size: 0.9rem;
+    margin-bottom: variables.$grid-1x;
+
+    &.valid {
+      color: colors.$primary;
+    }
+  }
+}
+
+
 
 /*-------| Product Page |--------*/
 .ProductCard {
@@ -267,6 +287,9 @@ footer {
 }
 
 .pagination {
+  display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
   .activePage {
     color: colors.$territory-text;
   }

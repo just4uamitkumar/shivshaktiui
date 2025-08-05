@@ -1,26 +1,23 @@
 import { Link } from "react-router";
+import type { navListType } from "./type";
 
 const Nav: React.FC = () => {
+  const navList:navListType[] = [
+    { name: "Jyotirlings", path: "/Jyotirling" },
+    { name: "Products", path: "/Products" },
+    { name: "Gallery", path: "/Gallery" },
+    { name: "Contact", path: "/Contact" },
+    { name: "Blog", path: "/Blog" },
+  ];
   return (
     <>
       <nav>
         <ul>
-          <li>
-            <Link to="/Jyotirling">Jyotirlings</Link>
-          </li>
-
-          <li>
-            <Link to="/Products">Products</Link>
-          </li>
-          <li>
-            <Link to="/Gallery">Gallery</Link>
-          </li>
-          <li>
-            <Link to="/Contact">Contact</Link>
-          </li>
-          <li>
-            <Link to="/Blog">Blog</Link>
-          </li>
+          {navList.map((item) => (
+            <li key={item.name}>
+              <Link to={item.path}>{item.name}</Link>
+            </li>
+          ))}
         </ul>
       </nav>
     </>

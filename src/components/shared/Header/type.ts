@@ -1,3 +1,5 @@
+import type { addressType } from "../../pages/Auth/type";
+
 export type userType = {
   firstName: string;
   lastName: string;
@@ -12,11 +14,8 @@ export type userType = {
   address?: addressType;
 };
 
-type addressType = {
-  addressLine1:string;
-  addressLine2:string;
-  city:string;
-  state:string;
-  country:string;
-  zipCode:string;
-}
+
+export type navListType = {
+  name: string;
+  path: string;
+};
