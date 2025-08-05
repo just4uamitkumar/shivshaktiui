@@ -21,7 +21,7 @@ const NavDrawer: React.FC<Props> = ({ isNavDrawer, toggleNavDrawer }) => {
         onClose={toggleNavDrawer}
         noFooter={true}
       >
-        <Grid size={12}>
+        <Grid size={12} onClick={toggleNavDrawer}>
           <Nav />
         </Grid>
       </CustomDrawer>

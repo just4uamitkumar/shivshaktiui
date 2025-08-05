@@ -1,7 +1,7 @@
 import { Menu, MenuItem } from "@mui/material";
 import axios from "axios";
 import { server } from "../../../redux/store";
-import { useNavigate  } from "react-router";
+import { useNavigate } from "react-router";
 
 interface Props {
   handleDropDownClose: () => void;
@@ -9,25 +9,30 @@ interface Props {
   open: boolean;
 }
 
-const DropDownMenu: React.FC<Props> = ({ handleDropDownClose, anchorEl, open }) => {
+const DropDownMenu: React.FC<Props> = ({
+  handleDropDownClose,
+  anchorEl,
+  open,
+}) => {
   const navigate = useNavigate();
 
   const handleLogout = async () => {
     try {
       await axios.get(`${server}user/logout`);
       localStorage.removeItem("token");
-      window.location.reload();
       handleDropDownClose();
-      alert("Logout successful!");
+      navigate('/LoggedOut', { state: { fromLogout: true } });
     } catch (error) {
       console.error(" error:", error);
+    } finally {
+      window.location.reload();
     }
   };
 
   const goToProfile = () => {
     handleDropDownClose();
     navigate("/Profile");
-  }
+  };
 
   return (
     <Menu

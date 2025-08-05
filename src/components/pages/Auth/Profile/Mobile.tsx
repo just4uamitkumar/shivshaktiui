@@ -1,13 +1,13 @@
 import { Stack, TextField, Snackbar, Alert } from "@mui/material";
 import { useEffect, useState } from "react";
-import { server } from "../../../redux/store";
-import TypoGraphy from "../../common/TypoGraphy";
 import Phone from "@mui/icons-material/Phone";
-import CustomBtn from "../../common/Button";
-import IconBtn from "../../common/IconBtn";
 import SaveIcon from "@mui/icons-material/Save";
 import CloseIcon from "@mui/icons-material/Close";
-import type { userType } from "../../shared/Header/type";
+import type { userType } from "../../../shared/Header/type";
+import { server } from "../../../../redux/store";
+import TypoGraphy from "../../../common/TypoGraphy";
+import CustomBtn from "../../../common/Button";
+import IconBtn from "../../../common/IconBtn";
 
 interface Props {
   user: Partial<userType> | null;
@@ -37,7 +37,7 @@ const Mobile: React.FC<Props> = ({ user, onUpdate }) => {
         setErrorSnack(true);
         return;
       }
-      const response = await fetch(`${server}user/${user?._id}`, {
+      const response = await fetch(`${server}user/${user?._id}/mobile`, {
         method: "PATCH",
         headers: {
           "Content-Type": "application/json",
@@ -45,15 +45,16 @@ const Mobile: React.FC<Props> = ({ user, onUpdate }) => {
         body: JSON.stringify({ mobile: mobile }),
       });
 
+      console.log("Response: Mobile", response);
+
       if (!response.ok) {
         throw new Error("Network response was not ok");
       }
 
-      const data = await response.json();
+      await response.json();
       setInput(!isInput);
       onUpdate();
       setAddSnack(true);
-      console.log("Update successful:", data);
     } catch (error) {
       console.error("Error updating user:", error);
     }

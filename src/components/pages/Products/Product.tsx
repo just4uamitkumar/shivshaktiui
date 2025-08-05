@@ -33,7 +33,7 @@ const Product: React.FC<Props> = ({
 
   return (
     <>
-      <Grid size={4} className="ProductCard" key={id}>
+      <Grid size={{ xs: 12, sm: 6, md: 4 }} className="ProductCard" key={id}>
         <Stack className="imgWrapper">
           <img src={thumbnail} alt={title} />
         </Stack>
