@@ -137,7 +137,7 @@ const Products: React.FC = () => {
       <PageBanner title={"Products"} />
 
       <Grid className="container pb-4 pt-4" spacing={3} container>
-        <Grid size={12} display={"flex"} gap={2}>
+        <Grid size={12} display={"flex"} flexWrap={"wrap"} gap={2}>
           <TextField
             value={query}
             variant="outlined"

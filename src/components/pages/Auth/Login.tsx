@@ -11,6 +11,7 @@ import { server } from "../../../redux/store";
 import axios from "axios";
 import { RIGHT } from "../../../utils/constants";
 import CustomBtn from "../../common/Button";
+import { useNavigate } from "react-router";
 
 interface Props {
   isLoginDrawer?: boolean;
@@ -21,6 +22,7 @@ interface Props {
 const Login: React.FC<Props> = ({ isLoginDrawer, toggleLoginDrawer, toggleRegisterDrawer }) => {
   const [email, setEmail] = useState<string>("");
   const [password, setPassword] = useState<string>("");
+  const navigate = useNavigate();
 
   const loginHandler = async () => {
     if (email === "" || password === "") {
@@ -35,6 +37,8 @@ const Login: React.FC<Props> = ({ isLoginDrawer, toggleLoginDrawer, toggleRegist
       });
       localStorage.setItem("token", response.data.token);
       toggleLoginDrawer();
+      navigate('/Profile');
+      window.location.reload();
     } catch (error) {
       console.error("Login error:", error);
       alert("Invalid credentials");
@@ -62,6 +66,7 @@ const Login: React.FC<Props> = ({ isLoginDrawer, toggleLoginDrawer, toggleRegist
               value={email}
               onChange={(e) => setEmail(e.target.value)}
               name="email"
+              size="small"
             />
           </Stack>
           <Stack>
@@ -72,6 +77,7 @@ const Login: React.FC<Props> = ({ isLoginDrawer, toggleLoginDrawer, toggleRegist
               onChange={(e) => setPassword(e.target.value)}
               name="password"
               type="password"
+              size="small"
             />
           </Stack>
         </Grid>

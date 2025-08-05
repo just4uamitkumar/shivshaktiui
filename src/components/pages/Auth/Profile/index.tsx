@@ -1,0 +1,52 @@
+import { Grid } from "@mui/material";
+import type { userType } from "../../../shared/Header/type";
+import { useEffect, useState } from "react";
+import { server } from "../../../../redux/store";
+import axios from "axios";
+import PageBanner from "../../../shared/PageBanner";
+import ProfileLeft from "./ProfileLeft";
+import ProfileRight from "./ProfileRight";
+
+const Profile: React.FC = () => {
+  const token = localStorage.getItem("token");
+  const [user, setUser] = useState<userType | null>(null);
+
+  useEffect(() => {
+    fetchProfile();
+  }, [token]);
+
+  const fetchProfile = async () => {
+    try {
+      if (token) {
+        const response = await axios.get(`${server}user/me`, {
+          headers: { Authorization: `Bearer ${token}` },
+        });
+        setUser(response.data?.user);
+      }
+    } catch (err) {
+      console.error(err);
+    }
+  };
+
+  return (
+    <>
+      <PageBanner
+        title={
+          user?.firstName && user?.lastName
+            ? user?.firstName + " " + user?.lastName
+            : "Profile"
+        }
+      />
+      <Grid container spacing={2} className="container profile-container">
+        <Grid size={4} className="left-side">
+          <ProfileLeft user={user} fetchProfile={fetchProfile} />
+        </Grid>
+        <Grid size={8} className="right-side">
+          <ProfileRight user={user} />
+        </Grid>
+      </Grid>
+    </>
+  );
+};
+
+export default Profile;
