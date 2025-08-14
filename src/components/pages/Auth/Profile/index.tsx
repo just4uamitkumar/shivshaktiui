@@ -15,6 +15,12 @@ const Profile: React.FC = () => {
     fetchProfile();
   }, [token]);
 
+  useEffect(() => {
+    if (user?.isVerified) {
+      localStorage.removeItem("pendingEmail");
+    }
+  }, [user]);
+
   const fetchProfile = async () => {
     try {
       if (token) {

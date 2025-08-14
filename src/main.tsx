@@ -20,6 +20,7 @@ import ProductDetail from "./components/pages/Products/ProductDetail.tsx";
 import Contact from "./components/pages/Contact/index.tsx";
 import Blog from "./components/pages/Blog/index.tsx";
 import NotFound from "./components/pages/NotFound/index.tsx";
+import VerifyEmail from "./components/shared/VerifyEmail/index.tsx";
 const Products = lazy(() => import("./components/pages/Products"));
 const WelcomeUser = lazy(() => import("./components/pages/Auth/WelcomeUser"));
 const LoggedOut = lazy(() => import("./components/pages/Auth/LoggedOut"));
@@ -28,6 +29,7 @@ const router = createBrowserRouter(
   createRoutesFromElements(
     <Route path="/" element={<App />}>
       <Route index element={<Home />} />
+      <Route path="/VerifyEmail/:token" element={<VerifyEmail />} />
       <Route path="/Profile" element={<Profile />} />
       <Route
         path="/Products"
