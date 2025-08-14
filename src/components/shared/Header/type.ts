@@ -3,6 +3,7 @@ import type { addressType } from "../../pages/Auth/type";
 export type userType = {
   firstName: string;
   lastName: string;
+  isVerified?: boolean;
   email: string;
   mobile: string;
   createdAt: string;

@@ -35,7 +35,7 @@ const Register: React.FC<Props> = ({
   const navigate = useNavigate();
 
   useEffect(() => {
-    if (formData?.password.length >= 8 && confirmPassword.length >= 8) {
+    if (formData?.password.length >= 8 && confirmPassword.length >= 6) {
       if (confirmPassword !== formData?.password) {
         setMessage(AuthEnum.notSamePassword);
       } else {
@@ -146,6 +146,7 @@ const Register: React.FC<Props> = ({
       .then(() => {
         toggleRegisterDrawer();
         setOpenModal(false);
+        localStorage.setItem("pendingEmail", formData.email);
       })
       .then(() => {
         navigate('/Welcome', { state: { fromRegister: true } });

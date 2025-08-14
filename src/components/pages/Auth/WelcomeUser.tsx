@@ -50,6 +50,12 @@ const WelcomeUser: React.FC = () => {
             <TypoGraphy variant="h4" className="text-center">
               You are registered successfully!{" "}
             </TypoGraphy>
+            <TypoGraphy variant="body1" className="text-center">
+              You will get verification link on your email soon!{" "}
+            </TypoGraphy>
+            <TypoGraphy variant="body1" className="text-center">
+              if you still did not get the link, please check your spam folder.
+            </TypoGraphy>
           </Stack>
 
           {showCountdown && (
