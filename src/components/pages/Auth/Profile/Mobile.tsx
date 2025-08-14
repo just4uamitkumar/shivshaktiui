@@ -45,8 +45,6 @@ const Mobile: React.FC<Props> = ({ user, onUpdate }) => {
         body: JSON.stringify({ mobile: mobile }),
       });
 
-      console.log("Response: Mobile", response);
-
       if (!response.ok) {
         throw new Error("Network response was not ok");
       }
