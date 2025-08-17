@@ -1,5 +1,8 @@
-import { Stack } from "@mui/material";
 import type { userType } from "../../../shared/Header/type";
+import Address from "./Address";
+import ChangePassword from "./ChangePassword";
+import Mobile from "./Mobile";
+
 
 interface Props {
   user: userType | null;
@@ -9,7 +12,9 @@ interface Props {
 const ProfileRight: React.FC<Props> = ({ user, fetchProfile }) => {
   return (
     <>
-      <Stack>{'Not Available'}</Stack>
+      <Address user={user} />
+      <Mobile user={user} onUpdate={fetchProfile} />
+      <ChangePassword user={user} onUpdate={fetchProfile} />
     </>
   );
 };

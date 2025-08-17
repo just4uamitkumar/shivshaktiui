@@ -21,7 +21,7 @@ const DropDownMenu: React.FC<Props> = ({
       await axios.get(`${server}user/logout`);
       localStorage.removeItem("token");
       handleDropDownClose();
-      navigate('/LoggedOut', { state: { fromLogout: true } });
+      navigate("/LoggedOut", { state: { fromLogout: true } });
     } catch (error) {
       console.error(" error:", error);
     } finally {
@@ -32,6 +32,11 @@ const DropDownMenu: React.FC<Props> = ({
   const goToProfile = () => {
     handleDropDownClose();
     navigate("/Profile");
+  };
+
+  const goToSettings = () => {
+    handleDropDownClose();
+    navigate("/AccountSettings");
   };
 
   return (
@@ -51,7 +56,7 @@ const DropDownMenu: React.FC<Props> = ({
       className="dropdown-menu"
     >
       <MenuItem onClick={goToProfile}>Profile</MenuItem>
-      <MenuItem onClick={handleDropDownClose}>My account</MenuItem>
+      <MenuItem onClick={goToSettings}>Settings</MenuItem>
       <MenuItem onClick={handleLogout}>Logout</MenuItem>
     </Menu>
   );

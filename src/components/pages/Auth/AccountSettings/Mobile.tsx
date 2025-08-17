@@ -1,4 +1,4 @@
-import { Stack, TextField, Snackbar, Alert } from "@mui/material";
+import { Stack, TextField, Snackbar, Alert, Grid } from "@mui/material";
 import { useEffect, useState } from "react";
 import Phone from "@mui/icons-material/Phone";
 import SaveIcon from "@mui/icons-material/Save";
@@ -76,36 +76,15 @@ const Mobile: React.FC<Props> = ({ user, onUpdate }) => {
 
   return (
     <>
-      {isInput ? (
-        <Stack display={"flex"} direction="row" alignItems="center" spacing={1}>
-          <TextField
-            label="Mobile"
-            variant="outlined"
-            value={mobile}
-            onChange={(e) => setMobile(e.target.value)}
-            type="text"
-            size="small"
-          />
-          <IconBtn
-            IconComponent={SaveIcon}
-            onClick={addMobile}
-            iconClass="primary-btn"
-          />
-          <IconBtn
-            IconComponent={CloseIcon}
-            onClick={() => setInput(false)}
-            iconClass="cancel-btn"
-          />
-        </Stack>
-      ) : (
-        <>
-          <Stack direction="row" alignItems="center" spacing={1}>
+      <Grid container spacing={2} className="mb-4">
+        <Grid size={3}>
+          <Stack  direction="row" alignItems="center">
             <Phone />
-            <TypoGraphy variant="body1">
-              {user?.mobile ?? "Not Available"}
+            <TypoGraphy variant="body1" className="semi-bold-font">
+              
+              {"Mobile"}
             </TypoGraphy>
           </Stack>
-
           <Stack direction="row" alignItems="center" spacing={1}>
             <CustomBtn
               variant={"text"}
@@ -114,8 +93,43 @@ const Mobile: React.FC<Props> = ({ user, onUpdate }) => {
               onClick={() => setInput(!isInput)}
             />
           </Stack>
-        </>
-      )}
+        </Grid>
+        <Grid size={9}>
+          {isInput ? (
+            <Stack
+              display={"flex"}
+              direction="row"
+              alignItems="center"
+              spacing={1}
+            >
+              <TextField
+                label="Mobile"
+                variant="outlined"
+                value={mobile}
+                onChange={(e) => setMobile(e.target.value)}
+                type="text"
+                size="small"
+              />
+              <IconBtn
+                IconComponent={SaveIcon}
+                onClick={addMobile}
+                iconClass="primary-btn"
+              />
+              <IconBtn
+                IconComponent={CloseIcon}
+                onClick={() => setInput(false)}
+                iconClass="cancel-btn"
+              />
+            </Stack>
+          ) : (
+              <Stack direction="row" alignItems="center" spacing={1}>
+                <TypoGraphy variant="body1">
+                  {"Not Available"}
+                </TypoGraphy>
+              </Stack>
+          )}
+        </Grid>
+      </Grid>
 
       <Snackbar
         open={addSnack}

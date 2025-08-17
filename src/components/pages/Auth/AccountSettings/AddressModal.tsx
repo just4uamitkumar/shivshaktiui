@@ -12,12 +12,10 @@ import { useEffect, useState } from "react";
 import type { cityType, countryType, stateType } from "../type";
 import { getCity, getCountry, getState } from "../locationApi";
 import CustomDialog from "../../../common/Dialog";
-import type { userType } from "../../../shared/Header/type";
 
 interface Props {
   openModal: boolean;
   closeModal?: () => void;
-  user: Partial<userType> | null;
   addressLine1?: string | null;
   setAddressLine1: (line: string | null) => void;
   addressLine2?: string | null;
@@ -36,7 +34,6 @@ interface Props {
 const AddressModal: React.FC<Props> = ({
   openModal,
   closeModal,
-  user,
   addressLine1,
   setAddressLine1,
   addressLine2,
@@ -124,8 +121,6 @@ const AddressModal: React.FC<Props> = ({
       setCity(selectedCity);
     }
   };
-
-  console.log("Address Modal User:", user);
 
   return (
     <>

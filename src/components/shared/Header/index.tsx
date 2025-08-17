@@ -12,11 +12,14 @@ import "./styles.scss";
 import WebHeader from "./WebHeader";
 import type { userType } from "./type";
 import MobileHeader from "./MobileHeader";
+import ForgotPassword from "../../pages/Auth/ResetPassword/ForgotPassword";
 
 const Header: React.FC = () => {
   const windowWidth = useViewportWidth();
   const [isLoginDrawer, setIsLoginDrawer] = useState<boolean>(false);
   const [isRegisterDrawer, setIsRegisterDrawer] = useState<boolean>(false);
+  const [isForgotPasswordDrawer, setIsForgotPasswordDrawer] =
+    useState<boolean>(false);
   const token = localStorage.getItem("token");
   const [userData, setUserData] = useState<userType | null>(null);
   const [anchorEl, setAnchorEl] = useState<null | HTMLElement>(null);
@@ -61,6 +64,14 @@ const Header: React.FC = () => {
     setIsRegisterDrawer(!isRegisterDrawer);
   };
 
+  const toggleForgotPasswordDrawer = () => {
+    if (isLoginDrawer) {
+      setIsLoginDrawer(false);
+    }
+
+    setIsForgotPasswordDrawer(!isForgotPasswordDrawer);
+  };
+
   return (
     <>
       <Courtesy />
@@ -94,6 +105,7 @@ const Header: React.FC = () => {
           isLoginDrawer={isLoginDrawer}
           toggleLoginDrawer={toggleLoginDrawer}
           toggleRegisterDrawer={toggleRegisterDrawer}
+          toggleForgotPasswordDrawer={toggleForgotPasswordDrawer}
         />
       )}
       {isRegisterDrawer && (
@@ -101,6 +113,12 @@ const Header: React.FC = () => {
           isRegisterDrawer={isRegisterDrawer}
           toggleLoginDrawer={toggleLoginDrawer}
           toggleRegisterDrawer={toggleRegisterDrawer}
+        />
+      )}
+      {isForgotPasswordDrawer && (
+        <ForgotPassword
+          isForgotPasswordDrawer={isForgotPasswordDrawer}
+          toggleForgotPasswordDrawer={toggleForgotPasswordDrawer}
         />
       )}
     </>

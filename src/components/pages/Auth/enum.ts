@@ -7,4 +7,5 @@ export const AuthEnum = {
     existEmail: 'Email is already registered',
     invalidPassword: 'Please enter a valid password', 
     notSamePassword: 'confirm password and password are not same',
+    notExistEmail: 'Email is not registered',
 } as const;
