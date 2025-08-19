@@ -1,11 +1,20 @@
-import { Stack } from "@mui/material";
+import { memo } from "react";
+import BirthDate from "./BirthDate";
+import type { userType } from "../../../shared/Header/type";
+import Age from "./Age";
 
-const ProfileRight: React.FC = () => {
+interface Props {
+  user: userType | null;
+  fetchProfile: () => void;
+}
+
+const ProfileRight: React.FC<Props> = ({ user, fetchProfile }) => {
   return (
     <>
-      <Stack>{"Not Available"}</Stack>
+      <BirthDate user={user} onUpdate={fetchProfile} />
+      <Age user={user} />
     </>
   );
 };
 
-export default ProfileRight;
+export default memo(ProfileRight);

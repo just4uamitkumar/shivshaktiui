@@ -13,6 +13,7 @@ export type userType = {
   _id: string;
   profilePic?: string;
   address?: addressType;
+  birthDate?: string;
 };
 
 

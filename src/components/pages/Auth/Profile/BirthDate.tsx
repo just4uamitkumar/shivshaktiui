@@ -1,6 +1,6 @@
-import { Stack, TextField, Snackbar, Alert, Grid } from "@mui/material";
+import { Stack, Snackbar, Alert, Grid } from "@mui/material";
 import { memo, useEffect, useState } from "react";
-import Phone from "@mui/icons-material/Phone";
+import CakeIcon from "@mui/icons-material/Cake";
 import SaveIcon from "@mui/icons-material/Save";
 import CloseIcon from "@mui/icons-material/Close";
 import type { userType } from "../../../shared/Header/type";
@@ -8,6 +8,11 @@ import { server } from "../../../../redux/store";
 import TypoGraphy from "../../../common/TypoGraphy";
 import CustomBtn from "../../../common/Button";
 import IconBtn from "../../../common/IconBtn";
+import { LocalizationProvider } from "@mui/x-date-pickers/LocalizationProvider";
+import { DatePicker } from "@mui/x-date-pickers/DatePicker";
+import { DemoContainer } from "@mui/x-date-pickers/internals/demo";
+import dayjs from "dayjs";
+import { AdapterDayjs } from "@mui/x-date-pickers/AdapterDayjs";
 import axios from "axios";
 
 interface Props {
@@ -15,35 +20,33 @@ interface Props {
   onUpdate: () => void;
 }
 
-const Mobile: React.FC<Props> = ({ user, onUpdate }) => {
+const BirthDate: React.FC<Props> = ({ user, onUpdate }) => {
   const [isInput, setInput] = useState<boolean>(false);
-  const [mobile, setMobile] = useState<string | null>(null);
+  const [dob, setDob] = useState<string | null>(null);
   const [addSnack, setAddSnack] = useState(false);
   const [errorSnack, setErrorSnack] = useState(false);
   const [snackMSG, setSnackMsg] = useState<string>("");
   const yourToken = localStorage.getItem("token");
 
   useEffect(() => {
-    if (user?.mobile) {
-      setMobile(user.mobile);
+    if (user?.birthDate) {
+      setDob(user.birthDate);
     }
   }, [user]);
 
-  const isValidMobile = (item: string) => {
-    const regex = /^[6-9]\d{9}$/;
-    return regex.test(item);
-  };
+  const today = dayjs();
+  const maxBirthDate = dayjs().year(today.year() - 15);
 
-  const addMobile = async () => {
-    if (!mobile || !isValidMobile(mobile)) {
+  const addBirthDate = async () => {
+    if (!dob) {
       setErrorSnack(true);
       return;
     }
 
     axios
       .patch(
-        `${server}user/${user?._id}/mobile`,
-        { mobile: mobile },
+        `${server}user/${user?._id}/birthDate`,
+        { birthDate: dob },
         {
           headers: {
             Authorization: `Bearer ${yourToken}`,
@@ -53,9 +56,9 @@ const Mobile: React.FC<Props> = ({ user, onUpdate }) => {
       .then((response) => {
         if (response.status === 200) {
           setInput(!isInput);
-          onUpdate();
-          setAddSnack(true);
           setSnackMsg(response.data.message);
+          setAddSnack(true);
+          onUpdate();
         }
       })
       .catch((error) => {
@@ -68,6 +71,16 @@ const Mobile: React.FC<Props> = ({ user, onUpdate }) => {
         setInput(!isInput);
         setSnackMsg(errorMsg);
       });
+  };
+
+  const handleChange = (newValue: dayjs.Dayjs | null) => {
+    if (newValue && newValue.isValid()) {
+      console.log("newValue", newValue);
+      console.log("newValue", newValue.format("DD-MM-YYYY"));
+      setDob(newValue.format("DD-MM-YYYY"));
+    } else {
+      setDob(null);
+    }
   };
 
   const handleAddSnack = (
@@ -91,15 +104,15 @@ const Mobile: React.FC<Props> = ({ user, onUpdate }) => {
       <Grid container spacing={2} className="mb-4">
         <Grid size={3}>
           <Stack direction="row" alignItems="center">
-            <Phone />
+            <CakeIcon />
             <TypoGraphy variant="body1" className="semi-bold-font">
-              {"Mobile"}
+              {"Birth Date"}
             </TypoGraphy>
           </Stack>
           <Stack direction="row" alignItems="center" spacing={1}>
             <CustomBtn
               variant={"text"}
-              text={!user?.mobile ? "Add Number" : "Update Number"}
+              text={!user?.birthDate ? "Add Birth Date" : "Update Birth Date"}
               btnClass={"primary-btn"}
               onClick={() => setInput(!isInput)}
             />
@@ -113,17 +126,25 @@ const Mobile: React.FC<Props> = ({ user, onUpdate }) => {
               alignItems="center"
               spacing={1}
             >
-              <TextField
-                label="Mobile"
-                variant="outlined"
-                value={mobile}
-                onChange={(e) => setMobile(e.target.value)}
-                type="text"
-                size="small"
-              />
+              <LocalizationProvider dateAdapter={AdapterDayjs}>
+                <DemoContainer components={["DatePicker"]}>
+                  <DatePicker
+                    value={dob ? dayjs(dob) : null}
+                    onChange={handleChange}
+                    defaultValue={dob ? dayjs(dob) : undefined}
+                    maxDate={maxBirthDate}
+                    disableFuture
+                    slotProps={{
+                      textField: {
+                        helperText: "You must be at least 15 years old",
+                      },
+                    }}
+                  />
+                </DemoContainer>
+              </LocalizationProvider>
               <IconBtn
                 IconComponent={SaveIcon}
-                onClick={addMobile}
+                onClick={addBirthDate}
                 iconClass="primary-btn"
               />
               <IconBtn
@@ -134,7 +155,9 @@ const Mobile: React.FC<Props> = ({ user, onUpdate }) => {
             </Stack>
           ) : (
             <Stack direction="row" alignItems="center" spacing={1}>
-              <TypoGraphy variant="body1">{mobile ?? "Not Available"}</TypoGraphy>
+              <TypoGraphy variant="body1">
+                {dob ? dayjs(dob).format("MMMM D, YYYY") : "Not Available"}
+              </TypoGraphy>
             </Stack>
           )}
         </Grid>
@@ -175,4 +198,4 @@ const Mobile: React.FC<Props> = ({ user, onUpdate }) => {
   );
 };
 
-export default memo(Mobile);
+export default memo(BirthDate);

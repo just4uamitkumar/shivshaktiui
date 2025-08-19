@@ -1,3 +1,4 @@
+import { memo } from "react";
 import type { userType } from "../../../shared/Header/type";
 import Address from "./Address";
 import ChangePassword from "./ChangePassword";
@@ -19,4 +20,4 @@ const ProfileRight: React.FC<Props> = ({ user, fetchProfile }) => {
   );
 };
 
-export default ProfileRight;
+export default memo(ProfileRight);

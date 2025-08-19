@@ -1,6 +1,6 @@
 import { Stack } from "@mui/material";
 import type { userType } from "../../../shared/Header/type";
-import { useEffect, useState } from "react";
+import { memo, useEffect, useState } from "react";
 import { FaUserCircle } from "react-icons/fa";
 import Email from "@mui/icons-material/Email";
 import TypoGraphy from "../../../common/TypoGraphy";
@@ -92,4 +92,4 @@ const ProfileLeft: React.FC<Props> = ({ user }) => {
   );
 };
 
-export default ProfileLeft;
+export default memo(ProfileLeft);
