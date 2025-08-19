@@ -6,14 +6,14 @@ import Email from "@mui/icons-material/Email";
 import TypoGraphy from "../../../common/TypoGraphy";
 import PersonIcon from "@mui/icons-material/Person";
 import TrolleyIcon from "@mui/icons-material/Trolley";
-import Mobile from "./Mobile";
+import AccessTimeIcon from "@mui/icons-material/AccessTime";
+import dayjs from "dayjs";
 
 interface Props {
   user: userType | null;
-  fetchProfile: () => void;
 }
 
-const ProfileLeft: React.FC<Props> = ({ user, fetchProfile }) => {
+const ProfileLeft: React.FC<Props> = ({ user }) => {
   const [role, setRole] = useState<string>("");
 
   useEffect(() => {
@@ -30,7 +30,7 @@ const ProfileLeft: React.FC<Props> = ({ user, fetchProfile }) => {
       setRole("User");
     }
   }, [user]);
-
+  
   return (
     <>
       <Stack className="profile-image ">
@@ -68,10 +68,11 @@ const ProfileLeft: React.FC<Props> = ({ user, fetchProfile }) => {
       <Stack
         direction="row"
         alignItems="center"
-        justifyContent={"space-between"}
         spacing={1}
+        className="mb-2 mt-2"
       >
-        <Mobile user={user} onUpdate={fetchProfile} />
+        <TrolleyIcon />
+        <TypoGraphy variant="body1">{role ?? "Not Available"}</TypoGraphy>
       </Stack>
       <Stack
         direction="row"
@@ -79,8 +80,13 @@ const ProfileLeft: React.FC<Props> = ({ user, fetchProfile }) => {
         spacing={1}
         className="mb-2 mt-2"
       >
-        <TrolleyIcon />
-        <TypoGraphy variant="body1">{role ?? "Not Available"}</TypoGraphy>
+        <AccessTimeIcon />
+        <TypoGraphy variant="body1">
+          {"Member since : "}
+          {user?.createdAt
+            ? dayjs(user.createdAt).format("MMMM D, YYYY")
+            : "Not Available"}
+        </TypoGraphy>
       </Stack>
     </>
   );

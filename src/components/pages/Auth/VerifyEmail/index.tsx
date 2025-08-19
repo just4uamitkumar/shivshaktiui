@@ -1,12 +1,11 @@
 import { Grid, Stack } from "@mui/material";
-
-import PageBanner from "../../shared/PageBanner";
-import TypoGraphy from "../../common/TypoGraphy";
+import PageBanner from "../../../shared/PageBanner";
+import TypoGraphy from "../../../common/TypoGraphy";
 import { useEffect, useState, useRef } from "react";
 import { useParams, useNavigate } from "react-router";
 import axios from "axios";
-import { server } from "../../../redux/store";
-import CustomBtn from "../../common/Button";
+import { server } from "../../../../redux/store";
+import CustomBtn from "../../../common/Button";
 
 const VerifyEmail: React.FC = () => {
   const [message, setMessage] = useState<string>("");

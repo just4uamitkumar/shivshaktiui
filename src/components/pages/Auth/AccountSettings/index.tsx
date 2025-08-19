@@ -4,10 +4,9 @@ import { useEffect, useState } from "react";
 import { server } from "../../../../redux/store";
 import axios from "axios";
 import PageBanner from "../../../shared/PageBanner";
-import ProfileLeft from "./ProfileLeft";
+import ProfileLeft from "../Profile/ProfileLeft";
 import ProfileRight from "./ProfileRight";
-
-const Profile: React.FC = () => {
+const AccountSettings: React.FC = () => {
   const token = localStorage.getItem("token");
   const [user, setUser] = useState<userType | null>(null);
 
@@ -37,11 +36,7 @@ const Profile: React.FC = () => {
   return (
     <>
       <PageBanner
-        title={
-          user?.firstName && user?.lastName
-            ? user?.firstName + " " + user?.lastName
-            : "Profile"
-        }
+        title={'Account Settings'}
       />
       <Grid container spacing={2} className="container profile-container">
         <Grid size={4} className="left-side">
@@ -55,4 +50,4 @@ const Profile: React.FC = () => {
   );
 };
 
-export default Profile;
+export default AccountSettings;

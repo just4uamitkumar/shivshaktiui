@@ -17,9 +17,10 @@ interface Props {
   isLoginDrawer?: boolean;
   toggleLoginDrawer: () => void;
   toggleRegisterDrawer:() => void;
+  toggleForgotPasswordDrawer:() => void;
 }
 
-const Login: React.FC<Props> = ({ isLoginDrawer, toggleLoginDrawer, toggleRegisterDrawer }) => {
+const Login: React.FC<Props> = ({ isLoginDrawer, toggleLoginDrawer, toggleRegisterDrawer, toggleForgotPasswordDrawer }) => {
   const [email, setEmail] = useState<string>("");
   const [password, setPassword] = useState<string>("");
   const navigate = useNavigate();
@@ -95,6 +96,7 @@ const Login: React.FC<Props> = ({ isLoginDrawer, toggleLoginDrawer, toggleRegist
               variant={"text"}
               text={"Forgot UserName/Password ?"}
               btnClass={"primary-btn"}
+              onClick={toggleForgotPasswordDrawer}
             />
           </Stack>
           <Stack direction={"row"} alignItems={"center"}>
