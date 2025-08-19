@@ -1,4 +1,4 @@
-import { Stack, Snackbar, Alert } from "@mui/material";
+import { Stack, Snackbar, Alert, Grid } from "@mui/material";
 import { useEffect, useState } from "react";
 import type { userType } from "../../../shared/Header/type";
 import TypoGraphy from "../../../common/TypoGraphy";
@@ -6,6 +6,7 @@ import CustomBtn from "../../../common/Button";
 import AddressModal from "./AddressModal";
 import type { addressType, cityType, countryType, stateType } from "../type";
 import { server } from "../../../../redux/store";
+import HomeIcon from "@mui/icons-material/Home";
 
 interface Props {
   user: Partial<userType> | null;
@@ -145,26 +146,19 @@ const Address: React.FC<Props> = ({ user }) => {
 
   return (
     <>
-      <Stack direction={"column"} spacing={1}>
-        <Stack
-          direction="row"
-          alignItems={"center"}
-          spacing={1}
-          className="mb-4 mt-2"
-        >
-          {user?.address?.addressLine1 && (
-            <Stack>
-              <TypoGraphy variant="body1" className="semi-bold-font">
-                {"Address"}
-              </TypoGraphy>
-            </Stack>
-          )}
+      <Grid container spacing={2} className="mb-4">
+        <Grid size={3}>
+          <Stack direction="row" alignItems="center">
+            <HomeIcon />
+            <TypoGraphy variant="body1" className="semi-bold-font">
+              {" Address"}
+            </TypoGraphy>
+          </Stack>
           <Stack
             direction={"row"}
             display={"flex"}
             alignItems={"flex-start"}
             alignContent={"center"}
-            spacing={2}
           >
             <CustomBtn
               variant={"text"}
@@ -175,32 +169,31 @@ const Address: React.FC<Props> = ({ user }) => {
               onClick={() => setAddressModal(true)}
             />
           </Stack>
-        </Stack>
-
-        <Stack direction={"column"} spacing={1}>
-          <>
+        </Grid>
+        <Grid size={9}>
+          <Stack>
             <TypoGraphy variant="body1">
               {user?.address?.addressLine1}
-            </TypoGraphy>
-            <TypoGraphy variant="body1">
+              {",  "}
               {user?.address?.addressLine2}
             </TypoGraphy>
-            <TypoGraphy variant="body1">{user?.address?.city?.name}</TypoGraphy>
+          </Stack>
+          <Stack>
             <TypoGraphy variant="body1">
+              {user?.address?.city?.name}
+              {", "}
               {user?.address?.state?.name}
-            </TypoGraphy>
-            <TypoGraphy variant="body1">
+              {","}
               {user?.address?.country?.name}
             </TypoGraphy>
-            <TypoGraphy variant="body1">{user?.address?.zipCode}</TypoGraphy>
-          </>
-        </Stack>
-      </Stack>
+          </Stack>
+          <TypoGraphy variant="body1">{user?.address?.zipCode}</TypoGraphy>
+        </Grid>
+      </Grid>
 
       <AddressModal
         closeModal={closeModal}
         openModal={addressModal}
-        user={user}
         addressLine1={addressLine1}
         setAddressLine1={setAddressLine1}
         addressLine2={addressLine2}

@@ -10,6 +10,7 @@ import TypoGraphy from "../../common/TypoGraphy";
 import { AuthEnum } from "./enum";
 import RegisterDialog from "./RegisterDialog";
 import { useNavigate } from "react-router";
+import PasswordRule from "./ResetPassword/PasswordRule";
 
 interface Props {
   isRegisterDrawer?: boolean;
@@ -149,7 +150,7 @@ const Register: React.FC<Props> = ({
         localStorage.setItem("pendingEmail", formData.email);
       })
       .then(() => {
-        navigate('/Welcome', { state: { fromRegister: true } });
+        navigate("/Welcome", { state: { fromRegister: true } });
       })
       .catch((error) => {
         console.error("Registration error:", error);
@@ -244,74 +245,7 @@ const Register: React.FC<Props> = ({
               type="password"
             />
           </Stack>
-          {formData.password.length > 0 && (
-            <Stack className="mt-2">
-              <ul className="password-rules">
-                <li>
-                  <TypoGraphy
-                    variant="body2"
-                    typeClass={
-                      formData.password.length >= 8
-                        ? "green-text"
-                        : "danger-text"
-                    }
-                  >
-                    {"Password must be at least 8 characters long."}
-                  </TypoGraphy>
-                </li>
-                <li>
-                  <TypoGraphy
-                    variant="body2"
-                    typeClass={
-                      /[A-Z]/.test(formData.password)
-                        ? "green-text"
-                        : "danger-text"
-                    }
-                  >
-                    {"Password must contain at least one uppercase letter."}
-                  </TypoGraphy>
-                </li>
-                <li>
-                  <TypoGraphy
-                    variant="body2"
-                    typeClass={
-                      /[a-z]/.test(formData.password)
-                        ? "green-text"
-                        : "danger-text"
-                    }
-                  >
-                    {"Password must contain at least one lowercase letter."}
-                  </TypoGraphy>
-                </li>
-                <li>
-                  <TypoGraphy
-                    variant="body2"
-                    typeClass={
-                      /[0-9]/.test(formData.password)
-                        ? "green-text"
-                        : "danger-text"
-                    }
-                  >
-                    {"Password must contain at least one number."}
-                  </TypoGraphy>
-                </li>
-                <li>
-                  <TypoGraphy
-                    variant="body2"
-                    typeClass={
-                      /[!@#$]/.test(formData.password)
-                        ? "green-text"
-                        : "danger-text"
-                    }
-                  >
-                    {
-                      "Password must contain at least one special character (!@#$)."
-                    }
-                  </TypoGraphy>
-                </li>
-              </ul>
-            </Stack>
-          )}
+          <PasswordRule password={formData.password} />
         </Grid>
         <Grid
           flexDirection={"column"}
