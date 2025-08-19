@@ -1,5 +1,5 @@
 import { Stack, Snackbar, Alert, Grid } from "@mui/material";
-import { useEffect, useState } from "react";
+import { useEffect, useState, memo } from "react";
 import type { userType } from "../../../shared/Header/type";
 import TypoGraphy from "../../../common/TypoGraphy";
 import CustomBtn from "../../../common/Button";
@@ -191,23 +191,25 @@ const Address: React.FC<Props> = ({ user }) => {
         </Grid>
       </Grid>
 
-      <AddressModal
-        closeModal={closeModal}
-        openModal={addressModal}
-        addressLine1={addressLine1}
-        setAddressLine1={setAddressLine1}
-        addressLine2={addressLine2}
-        setAddressLine2={setAddressLine2}
-        country={country}
-        setCountry={setCountry}
-        activeState={activeState}
-        setActiveState={setActiveState}
-        city={city}
-        setCity={setCity}
-        zipCode={zipCode}
-        setZipCode={setZipCode}
-        handleAddress={handleAddress}
-      />
+      {addressModal && (
+        <AddressModal
+          closeModal={closeModal}
+          openModal={addressModal}
+          addressLine1={addressLine1}
+          setAddressLine1={setAddressLine1}
+          addressLine2={addressLine2}
+          setAddressLine2={setAddressLine2}
+          country={country}
+          setCountry={setCountry}
+          activeState={activeState}
+          setActiveState={setActiveState}
+          city={city}
+          setCity={setCity}
+          zipCode={zipCode}
+          setZipCode={setZipCode}
+          handleAddress={handleAddress}
+        />
+      )}
 
       <Snackbar
         open={addSnack}
@@ -228,4 +230,4 @@ const Address: React.FC<Props> = ({ user }) => {
   );
 };
 
-export default Address;
+export default memo(Address);
