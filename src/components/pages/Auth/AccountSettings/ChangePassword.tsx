@@ -1,5 +1,5 @@
 import { Stack, Snackbar, Alert, Grid } from "@mui/material";
-import { useEffect, useState } from "react";
+import { memo, useEffect, useState } from "react";
 import VpnKeyIcon from "@mui/icons-material/VpnKey";
 import type { userType } from "../../../shared/Header/type";
 import TypoGraphy from "../../../common/TypoGraphy";
@@ -200,4 +200,4 @@ const ChangePassword: React.FC<Props> = () => {
   );
 };
 
-export default ChangePassword;
+export default memo(ChangePassword);

@@ -8,7 +8,7 @@ import {
   TextField,
   type SelectChangeEvent,
 } from "@mui/material";
-import { useEffect, useState } from "react";
+import { memo, useEffect, useState } from "react";
 import type { cityType, countryType, stateType } from "../type";
 import { getCity, getCountry, getState } from "../locationApi";
 import CustomDialog from "../../../common/Dialog";
@@ -250,4 +250,4 @@ const AddressModal: React.FC<Props> = ({
   );
 };
 
-export default AddressModal;
+export default memo(AddressModal);
