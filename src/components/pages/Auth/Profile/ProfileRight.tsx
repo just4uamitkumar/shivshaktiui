@@ -1,15 +1,9 @@
 import { Stack } from "@mui/material";
-import type { userType } from "../../../shared/Header/type";
 
-interface Props {
-  user: userType | null;
-  fetchProfile: () => void;
-}
-
-const ProfileRight: React.FC<Props> = ({ user, fetchProfile }) => {
+const ProfileRight: React.FC = () => {
   return (
     <>
-      <Stack>{'Not Available'}</Stack>
+      <Stack>{"Not Available"}</Stack>
     </>
   );
 };
