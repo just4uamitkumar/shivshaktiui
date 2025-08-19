@@ -30,9 +30,7 @@ const ProfileLeft: React.FC<Props> = ({ user }) => {
       setRole("User");
     }
   }, [user]);
-
-  console.log(user);
-
+  
   return (
     <>
       <Stack className="profile-image ">
