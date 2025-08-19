@@ -48,7 +48,7 @@ const Profile: React.FC = () => {
           <ProfileLeft user={user} />
         </Grid>
         <Grid size={8} className="right-side mt-2">
-          <ProfileRight user={user} fetchProfile={fetchProfile} />
+          <ProfileRight />
         </Grid>
       </Grid>
     </>
