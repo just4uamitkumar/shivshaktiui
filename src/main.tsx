@@ -24,6 +24,7 @@ import NotFound from "./components/pages/NotFound/index.tsx";
 import VerifyEmail from "./components/pages/Auth/VerifyEmail/index.tsx";
 import ResetPassword from "./components/pages/Auth/ResetPassword/index.tsx";
 import AccountSettings from "./components/pages/Auth/AccountSettings/index.tsx";
+import Product2 from "./components/pages/Products2/index.tsx";
 const Products = lazy(() => import("./components/pages/Products"));
 const WelcomeUser = lazy(() => import("./components/pages/Auth/WelcomeUser"));
 const LoggedOut = lazy(() => import("./components/pages/Auth/LoggedOut"));
@@ -75,6 +76,7 @@ const router = createBrowserRouter(
           </Suspense>
         }
       />
+      <Route path="/Product2" element={<Product2 />} />
       <Route
         path="/Welcome"
         element={

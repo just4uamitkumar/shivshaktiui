@@ -5,6 +5,7 @@ const Nav: React.FC = () => {
   const navList:navListType[] = [
     { name: "Jyotirlings", path: "/Jyotirling" },
     { name: "Products", path: "/Products" },
+    { name: "Products 2", path: "/Product2" },
     { name: "Gallery", path: "/Gallery" },
     { name: "Contact", path: "/Contact" },
     { name: "Blog", path: "/Blog" },
